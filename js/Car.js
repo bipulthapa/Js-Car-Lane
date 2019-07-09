@@ -1,7 +1,5 @@
 const PLAYER_BOTTOM_MARGIN = 10;
 
-const img = new Image();
-img.src = '../images/carRed.png';
       
 
 
@@ -24,7 +22,12 @@ class Car{
     }
 
     drawCar = () => {
-        ctx.fillRect(getLaneX(this.carLane),this.y,this.width,this.height);
+        // ctx.fillRect(getLaneX(this.carLane),this.y,this.width,this.height);
+        if(this.isPlayer) {
+            ctx.drawImage(IMG_PLAYER, getLaneX(this.carLane),this.y);
+        }else {
+            ctx.drawImage(IMG_ENEMY, getLaneX(this.carLane),this.y);
+        }
         // ctx.drawImage(img.src,getLaneX(this.carLane),this.y,this.width,this.height)
         // img.addEventListener('load', function() {
         // ctx.drawImage(img.src,getLaneX(this.carLane),this.y,this.width,this.height)

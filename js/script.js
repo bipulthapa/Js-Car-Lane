@@ -1,18 +1,23 @@
 var canvas = document.getElementById("canvas");
 
 const WIDTH = 280;
-const HEIGHT = 600;
+const HEIGHT = 700;
 const DIVIDER_WIDTH = 5;
 const TRAIL_WIDTH = 25;
 const TRAIL_GAP = 35;
 const BOX_POINTS = 10;
 const DEFAULT_PLAYER_CARLANE = 2;
 
+// loading image.
+const IMG_PLAYER = new Image();
+IMG_PLAYER.src = '../images/player.png';
+
+const IMG_ENEMY = new Image();
+IMG_ENEMY.src = '../images/enemy.png';
 
 var gameSpeed = 2;
 var timeHold = 2000;
 
-// console.log(canvas)
 canvas.width = WIDTH;
 canvas.height = HEIGHT;
 
@@ -20,8 +25,6 @@ var ctx = canvas.getContext("2d");
 var enemyArray = [];
 var gameScore = 0;
 var highScore = 0;
- 
-// ctx.fillRect(getLaneX(getRandomLane(1,4)),0,obstacles.width,obstacles.height);
 
 setInterval(function(){
     let obstacles = new Car(false);
@@ -39,7 +42,6 @@ ctx.closePath();
     function draw(){
     var animation = requestAnimationFrame(draw);
 
-    // console.log("Hello")
     ctx.beginPath();
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, WIDTH, HEIGHT);
@@ -100,7 +102,6 @@ ctx.closePath();
             }
         }
     }
-
     // console.log(enemyArray.length)
     enemyArray.forEach(function(value,index){
         // console.log("Im here")
@@ -123,7 +124,6 @@ ctx.closePath();
         if((value.carLane == player.carLane) && ((value.y+value.height) >= (HEIGHT-player.height-PLAYER_BOTTOM_MARGIN))){
             arr = enemyArray.splice(index,1);
             // console.log(arr);
-            console.log("crash");
             document.getElementById('wrapper').style.display = "block";  
             document.getElementById('canvas').style.display = "none";
             document.getElementById('title').innerText = "Game Over";
