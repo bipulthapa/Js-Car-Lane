@@ -10,10 +10,10 @@ const DEFAULT_PLAYER_CARLANE = 2;
 
 // loading image.
 const IMG_PLAYER = new Image();
-IMG_PLAYER.src = '../images/player.png';
+IMG_PLAYER.src = '../player.png';
 
 const IMG_ENEMY = new Image();
-IMG_ENEMY.src = '../images/enemy.png';
+IMG_ENEMY.src = '../enemy.png';
 
 var gameSpeed = 2;
 var timeHold = 2000;
