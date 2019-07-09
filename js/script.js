@@ -1,7 +1,7 @@
 var canvas = document.getElementById("canvas");
 
 const WIDTH = 280;
-const HEIGHT = 700;
+const HEIGHT = 600;
 const DIVIDER_WIDTH = 5;
 const TRAIL_WIDTH = 25;
 const TRAIL_GAP = 35;
